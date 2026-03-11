@@ -127,7 +127,21 @@
 
 /* Responsive Overrides */
 @media (max-width: 768px) {
-    .food-item { width: 160px; height: 160px; }
-    .loader-pho-wrap { width: 50vw; }
-    .logo-layer { width: 85vw; transform: translateY(-15vh); }
+    #loader {
+        gap: 20px;
+        padding-top: 5vh;
+    }
+    .loader-logo-group {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .loader-pho-wrap {
+        width: 60vw;
+        margin-top: -5vh; 
+        transform: translateX(4%); /* Shifted further right */
+    }
+    .logo-layer {
+        width: 90vw;
+        transform: none;
+    }
 }

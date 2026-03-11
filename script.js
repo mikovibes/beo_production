@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initMenuTabs();
   initParallax();
   initMobileNav();
+  initGalleryVibe();
 });
 
 // ════════════════════════════════ NAVBAR ════════════════════════════════
@@ -104,6 +105,20 @@ function initParallax() {
   };
 
   window.addEventListener('scroll', onScroll, { passive: true });
+}
+
+// ════════════════════════════════ GALLERY VIBE (Redesign) ════════════════════════════════
+function initGalleryVibe() {
+  const items = document.querySelectorAll('.aww-item');
+  items.forEach((item, index) => {
+    // Random rotation between -3 and 3 degrees
+    const rotation = (Math.random() * 6 - 3).toFixed(2);
+    // Slight random X/Y offset
+    const offsetX = (Math.random() * 10 - 5).toFixed(2);
+    const offsetY = (Math.random() * 10 - 5).toFixed(2);
+    
+    item.style.transform = `rotate(${rotation}deg) translate(${offsetX}px, ${offsetY}px)`;
+  });
 }
 
 // ════════════════════════════════ MENU TABS ════════════════════════════════
