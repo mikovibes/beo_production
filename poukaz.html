@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dárkový poukaz – Béo Ăn</title>
+    <meta name="description"
+        content="Darujte chuť Vietnamu. Dárkový poukaz do restaurace Béo Ăn — ideální dárek pro každou příležitost." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap"
+        rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --yellow: #FFD93D;
+            --yellow-dark: #f5c400;
+            --yellow-l: #fffbe6;
+            --black: #111111;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --gray-l: #f9f9f7;
+            --radius: 20px;
+            --radius-lg: 28px;
+            --font-head: 'Fredoka One', cursive;
+            --font-body: 'Nunito', sans-serif;
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--white);
+            color: var(--black);
+            overflow-x: hidden;
+        }
+
+        /* ── NAV ── */
+        .pv-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 18px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid var(--black);
+        }
+
+        .pv-nav-logo img {
+            height: 44px;
+            border-radius: 10px;
+        }
+
+        .pv-nav-back {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--black);
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid var(--black);
+            border-radius: 40px;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .pv-nav-back:hover {
+            background: var(--black);
+            color: var(--yellow);
+        }
+
+        /* ── HERO ── */
+        .pv-hero {
+            min-height: 100vh;
+            padding-top: 90px;
+            background: var(--yellow);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .pv-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* Decorative dots */
+        .pv-hero-dots {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .pv-hero-text {
+            padding: 80px 80px 80px 100px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pv-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--black);
+            color: var(--yellow);
+            font-weight: 800;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 40px;
+            margin-bottom: 28px;
+            opacity: 0;
+            animation: fadeUp 0.6s 0.2s ease both;
+        }
+
+        .pv-hero-headline {
+            font-family: var(--font-head);
+            font-size: clamp(3rem, 5.5vw, 5.2rem);
+            line-height: 1.05;
+            color: var(--black);
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeUp 0.7s 0.35s ease both;
+        }
+
+        .pv-hero-headline em {
+            font-style: normal;
+            position: relative;
+            display: inline-block;
+        }
+
+        .pv-hero-headline em::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--black);
+            border-radius: 3px;
+        }
+
+        .pv-hero-sub {
+            font-size: 1.15rem;
+            color: rgba(0, 0, 0, 0.7);
+            line-height: 1.65;
+            max-width: 460px;
+            margin-bottom: 44px;
+            opacity: 0;
+            animation: fadeUp 0.7s 0.5s ease both;
+        }
+
+        .pv-hero-cta {
+            opacity: 0;
+            animation: fadeUp 0.7s 0.65s ease both;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn-buy {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--black);
+            color: var(--yellow);
+            font-family: var(--font-body);
+            font-weight: 800;
+            font-size: 1.05rem;
+            padding: 16px 36px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.25s var(--ease-spring), box-shadow 0.25s ease;
+        }
+
+        .btn-buy:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-buy .arrow {
+            transition: transform 0.25s ease;
+        }
+
+        .btn-buy:hover .arrow {
+            transform: translateX(4px);
+        }
+
+        .pv-hero-note {
+            font-size: 0.85rem;
+            color: rgba(0, 0, 0, 0.55);
+            font-weight: 600;
+        }
+
+        /* Hero photo side */
+        .pv-hero-visual {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 0;
+            z-index: 2;
+        }
+
+        .pv-hero-photo-wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .pv-hero-photo-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            opacity: 0;
+            animation: photoReveal 1s 0.4s ease both;
+        }
+
+        /* floating tag */
+        .pv-float-tag {
+            position: absolute;
+            bottom: 48px;
+            left: -20px;
+            background: var(--white);
+            border: 3px solid var(--black);
+            border-radius: 16px;
+            padding: 14px 20px;
+            box-shadow: 6px 6px 0 var(--black);
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            animation: fadeUp 0.7s 1s var(--ease-spring) both;
+        }
+
+        .pv-float-tag .tag-icon {
+            font-size: 1.5rem;
+        }
+
+        /* ── VOUCHER SELECTOR ── */
+        .pv-selector {
+            padding: 100px 100px 80px;
+            background: var(--white);
+        }
+
+        .section-eyebrow {
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--gray);
+            margin-bottom: 12px;
+        }
+
+        .section-heading {
+            font-family: var(--font-head);
+            font-size: clamp(2rem, 3.5vw, 3.2rem);
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .section-heading .accent {
+            color: var(--black);
+            background: var(--yellow);
+            padding: 2px 12px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+
+        .section-sub {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-bottom: 56px;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        .voucher-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+
+        .vc {
+            position: relative;
+            border: 3px solid var(--black);
+            border-radius: var(--radius-lg);
+            padding: 36px 28px;
+            cursor: pointer;
+            transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease, background 0.2s;
+            background: var(--white);
+            overflow: hidden;
+        }
+
+        .vc::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: var(--black);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .vc:hover::before,
+        .vc.selected::before {
+            transform: scaleX(1);
+        }
+
+        .vc:hover {
+            transform: translateY(-6px);
+            box-shadow: 8px 8px 0 var(--black);
+        }
+
+        .vc.selected {
+            background: var(--yellow);
+            transform: translateY(-8px);
+            box-shadow: 8px 8px 0 var(--black);
+        }
+
+        .vc-popular-tag {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--black);
+            color: var(--yellow);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .vc-emoji {
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .vc-amount {
+            font-family: var(--font-head);
+            font-size: 2.6rem;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .vc-name {
+            font-weight: 800;
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .vc.selected .vc-name {
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .vc-desc {
+            font-size: 0.9rem;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        .vc.selected .vc-desc {
+            color: rgba(0, 0, 0, 0.65);
+        }
+
+        .vc-check {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--black);
+            color: var(--yellow);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0);
+            transition: opacity 0.3s, transform 0.4s var(--ease-spring);
+        }
+
+        .vc.selected .vc-check {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ── VOUCHER PREVIEW CARD ── */
+        .pv-preview-wrap {
+            margin: 48px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pv-card {
+            width: 540px;
+            background: var(--yellow);
+            border: 3px solid var(--black);
+            border-radius: var(--radius-lg);
+            box-shadow: 8px 8px 0 var(--black);
+            padding: 40px 44px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pv-card::after {
+            content: '';
+            position: absolute;
+            right: -30px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 3px solid var(--black);
+        }
+
+        .pv-card-logo img {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            border: 3px solid var(--black);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .pv-card-body {
+            flex: 1;
+        }
+
+        .pv-card-title {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0.6;
+            margin-bottom: 4px;
+        }
+
+        .pv-card-name {
+            font-family: var(--font-head);
+            font-size: 2rem;
+            line-height: 1.1;
+        }
+
+        .pv-card-sub {
+            font-size: 0.8rem;
+            font-weight: 600;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .pv-card-amount {
+            font-family: var(--font-head);
+            font-size: 2.8rem;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        /* ── FORM ── */
+        .pv-form-section {
+            background: var(--gray-l);
+            padding: 100px;
+            border-top: 3px solid var(--black);
+            border-bottom: 3px solid var(--black);
+        }
+
+        .pv-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pv-form-intro .section-heading {
+            margin-bottom: 20px;
+        }
+
+        .pv-trust-items {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .pv-trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .pv-trust-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--yellow);
+            border: 2px solid var(--black);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .pv-trust-text strong {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 800;
+        }
+
+        .pv-trust-text span {
+            font-size: 0.82rem;
+            color: var(--gray);
+        }
+
+        /* Form itself */
+        .pv-form {
+            background: var(--white);
+            border: 3px solid var(--black);
+            border-radius: var(--radius-lg);
+            padding: 44px;
+            box-shadow: 8px 8px 0 var(--black);
+        }
+
+        .pv-form h3 {
+            font-family: var(--font-head);
+            font-size: 1.8rem;
+            margin-bottom: 28px;
+        }
+
+        .form-field {
+            margin-bottom: 20px;
+        }
+
+        .form-field label {
+            display: block;
+            font-weight: 800;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 8px;
+            color: var(--black);
+        }
+
+        .form-field input,
+        .form-field textarea,
+        .form-field select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background: var(--white);
+        }
+
+        .form-field input:focus,
+        .form-field textarea:focus,
+        .form-field select:focus {
+            border-color: var(--black);
+            box-shadow: 3px 3px 0 var(--yellow);
+        }
+
+        .form-field textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .form-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .form-amount-display {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 18px;
+            border: 2px solid var(--black);
+            border-radius: 12px;
+            background: var(--yellow-l);
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            background: var(--black);
+            color: var(--yellow);
+            font-family: var(--font-body);
+            font-weight: 800;
+            font-size: 1.05rem;
+            border: none;
+            border-radius: 14px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: transform 0.25s var(--ease-spring), box-shadow 0.25s ease, background 0.2s;
+            letter-spacing: 0.02em;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 6px 8px 0 rgba(0, 0, 0, 0.2);
+            background: #1a1a1a;
+        }
+
+        .form-legal {
+            margin-top: 14px;
+            font-size: 0.75rem;
+            color: var(--gray);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        /* ── EMOTIONAL CLOSER ── */
+        .pv-closer {
+            padding: 120px 100px;
+            background: var(--black);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pv-closer::before {
+            content: '🍜';
+            font-size: 12rem;
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .pv-closer::after {
+            content: '🌿';
+            font-size: 12rem;
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .pv-closer-quote {
+            font-family: var(--font-head);
+            font-size: clamp(2rem, 4vw, 3.8rem);
+            color: var(--yellow);
+            line-height: 1.15;
+            max-width: 760px;
+            margin: 0 auto 24px;
+        }
+
+        .pv-closer-sub {
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.55);
+            max-width: 480px;
+            margin: 0 auto 48px;
+            line-height: 1.65;
+        }
+
+        .pv-closer-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 56px;
+        }
+
+        .pv-closer-feat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            color: var(--white);
+        }
+
+        .pv-closer-feat .feat-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.07);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .pv-closer-feat span {
+            font-size: 0.82rem;
+            font-weight: 700;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .btn-buy-dark {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--yellow);
+            color: var(--black);
+            font-family: var(--font-body);
+            font-weight: 800;
+            font-size: 1.08rem;
+            padding: 18px 44px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 4px 4px 0 rgba(255, 217, 61, 0.4);
+            transition: transform 0.25s var(--ease-spring), box-shadow 0.25s ease;
+        }
+
+        .btn-buy-dark:hover {
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 6px 10px 0 rgba(255, 217, 61, 0.4);
+        }
+
+        /* ── FOOTER ── */
+        .pv-footer {
+            padding: 36px 100px;
+            border-top: 2px solid var(--black);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .pv-footer a {
+            font-weight: 700;
+            color: var(--black);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .pv-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .pv-footer-copy {
+            font-size: 0.82rem;
+            color: var(--gray);
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes photoReveal {
+            from {
+                opacity: 0;
+                transform: scale(1.04);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.65s ease, transform 0.65s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── SUCCESS STATE ── */
+        .form-success {
+            text-align: center;
+            padding: 40px 20px;
+            display: none;
+        }
+
+        .form-success .success-icon {
+            font-size: 4rem;
+            margin-bottom: 16px;
+        }
+
+        .form-success h3 {
+            font-family: var(--font-head);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .form-success p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 1024px) {
+            .pv-hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .pv-hero-text {
+                padding: 120px 40px 60px;
+            }
+
+            .pv-hero-visual {
+                height: 60vw;
+                min-height: 360px;
+            }
+
+            .pv-selector,
+            .pv-form-section,
+            .pv-closer {
+                padding: 80px 40px;
+            }
+
+            .pv-form-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .voucher-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .pv-card {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .pv-nav {
+                padding: 14px 24px;
+            }
+
+            .pv-hero-text {
+                padding: 100px 24px 48px;
+            }
+
+            .pv-selector,
+            .pv-form-section,
+            .pv-closer,
+            .pv-footer {
+                padding: 60px 24px;
+            }
+
+            .pv-form {
+                padding: 28px 20px;
+            }
+
+            .form-two-col {
+                grid-template-columns: 1fr;
+            }
+
+            .pv-closer-features {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="pv-nav">
+        <a href="index.html" class="pv-nav-logo">
+            <img src="Logo/561685407_122149243454768990_2168087178171989979_n.jpg" alt="Béo Ăn" />
+        </a>
+        <a href="index.html" class="pv-nav-back">
+            ← Zpět na hlavní stránku
+        </a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="pv-hero">
+        <div class="pv-hero-dots"></div>
+
+        <div class="pv-hero-text">
+            <div class="pv-kicker">🎁 Dárkový poukaz</div>
+            <h1 class="pv-hero-headline" style="font-family: 'DynaPuff', cursive; font-weight: 700;">
+                Darujte<br /><em>chuť Vietnamu</em>
+            </h1>
+            <p class="pv-hero-sub">
+                Poukaz do Béo Ăn je víc než dárek — je to příběh rodiny, tradice a autentické vietnamské kuchyně.
+                Ideální pro každou příležitost.
+            </p>
+            <div class="pv-hero-cta">
+                <a href="#selector" class="btn-buy">
+                    Koupit poukaz <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="pv-hero-visual">
+            <div class="pv-hero-photo-wrap">
+                <img src="poukaz/589813480_17879145831431463_8940552931003966806_n.jpg" alt="Dárkový poukaz Béo Ăn" />
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VOUCHER SELECTOR -->
+    <section class="pv-selector" id="selector">
+        <div style="max-width:1100px;margin:0 auto;">
+            <p class="section-eyebrow reveal">Vyberte hodnotu</p>
+            <h2 class="section-heading reveal" style="font-family: 'DynaPuff', cursive; font-weight: 700;">Vyberte <span
+                    class="accent">svůj poukaz</span></h2>
+            <p class="section-sub reveal">Každý poukaz platí na celé menu — polévky, hlavní chody, vietnamský čaj i
+                dezerty. Žádné podmínky.</p>
+
+            <div class="voucher-cards reveal">
+                <div class="vc" onclick="selectVoucher(this, 500, 'Starter')" id="vc500">
+                    <div class="vc-amount">500 Kč</div>
+                    <div class="vc-name">Starter Poukaz</div>
+                    <div class="vc-desc">Perfektní pro první visit nebo malý, ale smysluplný dárek.</div>
+                    <div class="vc-check">✓</div>
+                </div>
+
+                <div class="vc selected" onclick="selectVoucher(this, 1000, 'Premium')" id="vc1000">
+                    <div class="vc-popular-tag">Nejoblíbenější</div>
+                    <div class="vc-amount">1 000 Kč</div>
+                    <div class="vc-name">Premium Poukaz</div>
+                    <div class="vc-desc">Plnohodnotný zážitek pro dva — vietnamská večeře, nápoje a skvělá atmosféra.
+                    </div>
+                    <div class="vc-check">✓</div>
+                </div>
+
+                <div class="vc" onclick="selectVoucher(this, 2000, 'VIP')" id="vc2000">
+                    <div class="vc-amount">2 000 Kč</div>
+                    <div class="vc-name">VIP Poukaz</div>
+                    <div class="vc-desc">Exkluzivní zážitek pro celou rodinu nebo skupinu přátel. Ten nejlepší dárek.
+                    </div>
+                    <div class="vc-check">✓</div>
+                </div>
+            </div>
+
+            <!-- Voucher Preview Card -->
+            <div class="pv-preview-wrap reveal" id="voucherPreview">
+                <div class="pv-card">
+                    <div class="pv-card-body">
+                        <div class="pv-card-title" style="white-space:nowrap;">Dárkový poukaz</div>
+                        <div class="pv-card-name" style="font-family: 'DynaPuff', cursive; font-weight: 700;">Béo Ăn
+                        </div>
+                    </div>
+                    <div class="pv-card-amount" id="cardAmount">1 000 Kč</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="pv-form-section" id="form">
+        <div class="pv-form-grid">
+            <div class="pv-form-intro reveal">
+                <p class="section-eyebrow">Objednávka</p>
+                <h2 class="section-heading" style="font-family: 'DynaPuff', cursive; font-weight: 700;">Vyplňte <span
+                        class="accent">detaily</span></h2>
+
+                <div class="pv-trust-items">
+                    <div class="pv-trust-item">
+                        <div class="pv-trust-icon">📧</div>
+                        <div class="pv-trust-text">
+                            <strong>Doručení e-mailem nebo fyzicky v restauraci</strong>
+                            <span>Vyberete způsob doručení v objednávce</span>
+                        </div>
+                    </div>
+                    <div class="pv-trust-item">
+                        <div class="pv-trust-icon">🗓️</div>
+                        <div class="pv-trust-text">
+                            <strong>Platnost 12 měsíců</strong>
+                            <span>Bez skrytých podmínek a omezení</span>
+                        </div>
+                    </div>
+                    <div class="pv-trust-item">
+                        <div class="pv-trust-icon">🍜</div>
+                        <div class="pv-trust-text">
+                            <strong>Platí na celé menu</strong>
+                            <span>Jídlo, nápoje, i dezerty</span>
+                        </div>
+                    </div>
+                    <div class="pv-trust-item">
+                        <div class="pv-trust-icon">🤝</div>
+                        <div class="pv-trust-text">
+                            <strong>Rodinný podnik</strong>
+                            <span>Oceněni průvodcem Gault &amp; Millau 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pv-form reveal">
+                <h3 style="font-family: 'DynaPuff', cursive; font-weight: 700;">Dokončit objednávku</h3>
+
+                <div id="formFields">
+                    <div class="form-field">
+                        <label>Vybraná hodnota</label>
+                        <div class="form-amount-display">
+                            <span>🎁</span>
+                            <span id="formAmountDisplay">1 000 Kč — Premium Poukaz</span>
+                        </div>
+                    </div>
+
+                    <div class="form-two-col">
+                        <div class="form-field">
+                            <label>Vaše jméno *</label>
+                            <input type="text" id="buyerName" placeholder="Jan Novák" required />
+                        </div>
+                        <div class="form-field">
+                            <label>Jméno obdarovaného</label>
+                            <input type="text" id="recipName" placeholder="Marie Nováková" />
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label>E-mail *</label>
+                        <input type="email" id="buyerEmail" placeholder="jan@email.cz" required />
+                    </div>
+
+                    <div class="form-field">
+                        <label>Způsob doručení *</label>
+                        <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                            <label class="delivery-opt" id="opt-email" onclick="setDelivery('email')"
+                                style="flex:1;min-width:160px;display:flex;align-items:center;gap:10px;border:2px solid var(--black);border-radius:12px;padding:14px 16px;cursor:pointer;font-weight:700;font-size:0.9rem;background:var(--yellow);">
+                                <span style="font-size:1.3rem;">📧</span> Zaslat<br>e-mailem
+                            </label>
+                            <label class="delivery-opt" id="opt-physical" onclick="setDelivery('physical')"
+                                style="flex:1;min-width:160px;display:flex;align-items:center;gap:10px;border:2px solid rgba(0,0,0,0.2);border-radius:12px;padding:14px 16px;cursor:pointer;font-weight:700;font-size:0.9rem;background:var(--white);">
+                                <span style="font-size:1.3rem;">🏪</span> Vyzvednout<br>v restauraci
+                            </label>
+                        </div>
+                        <input type="hidden" id="deliveryType" value="email" />
+                    </div>
+
+                    <div class="form-field">
+                        <label>Osobní vzkaz (nepovinné)</label>
+                        <textarea id="message" placeholder="Přeji ti krásný zážitek v Béo Ăn! 🍜"></textarea>
+                    </div>
+
+                    <button class="btn-submit" onclick="submitForm()"
+                        style="font-family: 'DynaPuff', cursive; font-weight: 700;">
+                        🎁 Objednat poukaz
+                    </button>
+                    <div class="form-legal">
+                        Odesláním potvrzujete zájem o poukaz. Kontaktujeme vás na zadaném e-mailu.<br />
+                        Platba bude domluvena individuálně.
+                    </div>
+                </div>
+
+                <div class="form-success" id="formSuccess">
+                    <div class="success-icon">🎉</div>
+                    <h3>Objednávka odeslána!</h3>
+                    <p>Brzy vás kontaktujeme na <strong id="successEmail"></strong><br />a domluvíme se na platbě a
+                        doručení.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EMOTIONAL CLOSER -->
+    <section class="pv-closer">
+        <p class="pv-closer-quote reveal" style="font-family: 'DynaPuff', cursive; font-weight: 700;">
+            Malý dárek, který vytvoří velký zážitek.
+        </p>
+        <p class="pv-closer-sub reveal">
+            Každé jídlo v Béo Ăn je připraveno s láskou, podle receptů naší babičky z Vietnamu. Darujte kousek toho
+            příběhu.
+        </p>
+        <div class="pv-closer-features reveal">
+            <div class="pv-closer-feat">
+                <div class="feat-icon">🏮</div>
+                <span>Autentická<br />kuchyně</span>
+            </div>
+            <div class="pv-closer-feat">
+                <div class="feat-icon">👨‍👩‍👧</div>
+                <span>Rodinný<br />podnik</span>
+            </div>
+            <div class="pv-closer-feat">
+                <div class="feat-icon">⭐</div>
+                <span>Gault & Millau<br />2026</span>
+            </div>
+            <div class="pv-closer-feat">
+                <div class="feat-icon">🌿</div>
+                <span>Čerstvé<br />suroviny</span>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="pv-footer">
+        <a href="index.html">← Béo Ăn · Hlavní stránka</a>
+        <span class="pv-footer-copy">© 2024 Béo Ăn · Bratislavská 550/25, Hustopeče</span>
+        <span class="pv-footer-copy">Autentická vietnamská kuchyně</span>
+    </footer>
+
+    <script>
+        // ── Selected state
+        let selectedAmount = 1000;
+        let selectedName = 'Premium';
+        let selectedDelivery = 'email';
+
+        function selectVoucher(el, amount, name) {
+            document.querySelectorAll('.vc').forEach(c => c.classList.remove('selected'));
+            el.classList.add('selected');
+            selectedAmount = amount;
+            selectedName = name;
+            document.getElementById('cardAmount').textContent = amount.toLocaleString('cs-CZ') + ' Kč';
+            document.getElementById('formAmountDisplay').textContent =
+                amount.toLocaleString('cs-CZ') + ' Kč — ' + name + ' Poukaz';
+        }
+
+        function setDelivery(type) {
+            selectedDelivery = type;
+            document.getElementById('deliveryType').value = type;
+            const active = { border: '2px solid var(--black)', background: 'var(--yellow)' };
+            const inactive = { border: '2px solid rgba(0,0,0,0.2)', background: 'var(--white)' };
+            Object.assign(document.getElementById('opt-email').style, type === 'email' ? active : inactive);
+            Object.assign(document.getElementById('opt-physical').style, type === 'physical' ? active : inactive);
+        }
+
+        function submitForm() {
+            const email = document.getElementById('buyerEmail').value.trim();
+            const name = document.getElementById('buyerName').value.trim();
+            if (!email || !name) {
+                alert('Prosím vyplňte vaše jméno a e-mail.');
+                return;
+            }
+            document.getElementById('formFields').style.display = 'none';
+            const successEl = document.getElementById('formSuccess');
+            successEl.style.display = 'block';
+            document.getElementById('successEmail').textContent = email;
+        }
+
+        // ── Scroll reveal
+        const revealEls = document.querySelectorAll('.reveal');
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => io.observe(el));
+    </script>
+</body>
+
+</html>

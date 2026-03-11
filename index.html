@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Béo Ăn — Vietnamese Bistro | Hustopeče</title>
+    <meta name="description"
+        content="Béo Ăn – autentická vietnamská rodinná restaurace v Hustopečích. Oceněni Gault & Millau. Objednejte si online nebo navštivte nás." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ══════════════════════════════════════════ LOADER ══════════════════════════════════════════ -->
+    <div id="loader">
+        <!-- Steam dots rising above the logo -->
+        <div class="ld-steam">
+            <span class="ld-dot d1"></span>
+            <span class="ld-dot d2"></span>
+            <span class="ld-dot d3"></span>
+        </div>
+        <!-- Logo card -->
+        <div class="ld-logo-wrap">
+            <img src="Logo/561685407_122149243454768990_2168087178171989979_n.jpg" alt="Béo Ăn" class="ld-logo" />
+        </div>
+        <!-- Tagline -->
+        <p class="ld-tagline">Autentická vietnamská kuchyně</p>
+        <!-- Progress bar -->
+        <div class="ld-bar">
+            <div class="ld-progress"></div>
+        </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════ NAV ══════════════════════════════════════════ -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">
+                <img src="Logo/561685407_122149243454768990_2168087178171989979_n.jpg" alt="Béo Ăn logo" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Galerie</a></li>
+                <li><a href="#about">O nás</a></li>
+                <li><a href="poukaz.html">🎁 Vouchery</a></li>
+            </ul>
+            <button class="nav-burger" id="navBurger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="nav-mobile" id="navMobile">
+            <ul>
+                <li><a href="#menu" class="nm-link">Menu</a></li>
+                <li><a href="#gallery" class="nm-link">Galerie</a></li>
+                <li><a href="#about" class="nm-link">O nás</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════════ HERO ══════════════════════════════════════════ -->
+    <section id="hero">
+        <div class="hero-bg-dots"></div>
+
+        <!-- Floating cartoon decorations -->
+        <div class="hero-deco deco-star d1">★</div>
+        <div class="hero-deco deco-star d2">✦</div>
+        <div class="hero-deco deco-noodle d3">
+            <svg viewBox="0 0 80 80" width="80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 20 Q30 5 50 20 Q70 35 60 55 Q50 70 30 65 Q10 60 10 40 Q10 25 25 22" stroke="#111"
+                    stroke-width="4" stroke-linecap="round" fill="none" />
+                <path d="M20 30 Q40 15 55 30 Q65 42 55 55" stroke="#111" stroke-width="3" stroke-linecap="round"
+                    fill="none" opacity="0.5" />
+            </svg>
+        </div>
+
+        <div class="hero-deco deco-leaf d5">🌿</div>
+        <div class="hero-deco deco-star d6">★</div>
+        <div class="hero-deco deco-pepper d7">🌶️</div>
+
+        <div class="hero-content">
+            <div class="hero-badge animate-on-scroll">
+                <span class="badge-dot"></span>
+                Gault &amp; Millau oceněná restaurace
+            </div>
+            <div class="hero-logo-wrap animate-on-scroll">
+                <img src="Logo/561685407_122149243454768990_2168087178171989979_n.jpg" alt="Béo Ăn" class="hero-logo" />
+            </div>
+            <p class="hero-tagline animate-on-scroll" style="font-family: 'DynaPuff', cursive; font-weight: 700;">
+                Vietnamská rodinná <span class="tagline-accent">kuchyně</span>
+                plná duše a chuti</p>
+            <p class="hero-sub animate-on-scroll">Autentické pokrmy z Vietnamu s láskou připravené v srdci Hustopečí</p>
+            <div class="hero-ctas animate-on-scroll">
+                <a href="#order" class="btn-primary">
+                    <span>Objednat online</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <a href="#menu" class="btn-outline">Zobrazit menu</a>
+            </div>
+
+        </div>
+
+        <!-- Hero food image mosaic -->
+        <div class="hero-mosaic">
+            <div class="mosaic-card mc1" data-parallax="0.06">
+                <img src="Jidla/Bageta Bánh Mì Gà.jpg" alt="Bageta Bánh Mì Gà" />
+            </div>
+            <div class="mosaic-card mc2" data-parallax="0.04">
+                <img src="Jidla/Bún Cá.jpg" alt="Bún Cá" />
+            </div>
+            <div class="mosaic-card mc3" data-parallax="0.08">
+                <img src="Jidla/Phở.jpg" alt="Phở" />
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ══════════════════════════════════════════ MENU (REACT COMPONENT) ══════════════════════════════════════════ -->
+    <div id="root"></div>
+
+    <!-- ══════════════════════════════════════════ GALLERY ══════════════════════════════════════════ -->
+    <section id="gallery" class="aww-gallery">
+        <div class="aww-header animate-on-scroll">
+            <div class="section-label" style="background:var(--black); color:var(--yellow); border-color:var(--black);">
+                Kulinářská Expozice</div>
+            <h2 class="aww-title">Umění na <span class="accent-yellow">talíři</span></h2>
+            <p class="aww-subtitle">Naše pokrmy nejsou jen jídlo. Jsou to pestré barvy, tvary a textury Vietnamu,
+                pečlivě vrstvené do dokonalé kompozice zprostředkovávající jedinečný vizuální i chuťový zážitek.</p>
+        </div>
+
+        <div class="aww-container gallery-lightbox-container">
+            <!-- Hero Entrance -->
+            <div class="aww-hero animate-on-scroll">
+                <div class="aww-item aww-item-hero" data-parallax="0.04">
+                    <img src="Jidla/Bún Cá.jpg" alt="Bún Cá">
+                    <div class="aww-caption">Bún Cá</div>
+                </div>
+            </div>
+
+            <!-- Structured Grid 1 -->
+            <div class="aww-grid aww-grid-1 animate-on-scroll">
+                <div class="aww-item aww-item-medium" data-parallax="0.02">
+                    <img src="Jidla/Bún Bò Nam Bộ.jpg" alt="Bún Bò Nam Bộ">
+                    <div class="aww-caption">Bún Bò Nam Bộ</div>
+                </div>
+                <div class="aww-item aww-item-small" data-parallax="0.08">
+                    <img src="Jidla/Bún Bò Nam Bộ 2.jpg" alt="Bún Bò Nam Bộ Detail">
+
+                </div>
+                <div class="aww-item aww-item-medium" data-parallax="-0.02">
+                    <img src="Jidla/Kake Udon.jpg" alt="Kake Udon">
+                    <div class="aww-caption">Kake Udon</div>
+                </div>
+            </div>
+
+            <!-- Featured Dish Mid -->
+            <div class="aww-feature animate-on-scroll">
+                <div class="aww-item aww-item-large" data-parallax="0.05">
+                    <img src="Jidla/Phad Thai.jpg" alt="Phad Thai">
+                    <div class="aww-caption">Phad Thai</div>
+                </div>
+            </div>
+
+            <!-- Structured Grid 2 -->
+            <div class="aww-grid aww-grid-2 animate-on-scroll">
+                <div class="aww-item aww-item-small" data-parallax="0.03">
+                    <img src="Jidla/Dušené hovězí Thịt bò kho.jpg" alt="Dušené hovězí Thịt bò kho">
+                    <div class="aww-caption">Dušené hovězí Thịt bò kho</div>
+                </div>
+                <div class="aww-item aww-item-medium" data-parallax="-0.01">
+                    <img src="Jidla/Dušené hovězí Thịt bò kho 2.jpg" alt="Dušené hovězí Thịt bò kho Detail">
+
+                </div>
+                <div class="aww-item aww-item-small" data-parallax="0.06">
+                    <img src="Jidla/Smažené zavitky Nem Rán.jpg" alt="Smažené zavitky Nem Rán">
+                    <div class="aww-caption">Smažené zavitky Nem Rán</div>
+                </div>
+                <div class="aww-item aww-item-medium" data-parallax="0.02">
+                    <img src="Jidla/Smažené zavitky Nem Rán 2.jpg" alt="Smažené zavitky Nem Rán Detail">
+
+                </div>
+            </div>
+
+            <!-- Grid 3 -->
+            <div class="aww-grid aww-grid-3 animate-on-scroll">
+                <div class="aww-item aww-item-medium" data-parallax="-0.03">
+                    <img src="Jidla/Phở.jpg" alt="Phở">
+                    <div class="aww-caption">Phở</div>
+                </div>
+                <div class="aww-item aww-item-large" data-parallax="0.04">
+                    <img src="Jidla/Bageta Bánh Mì Gà.jpg" alt="Bageta Bánh Mì Gà">
+                    <div class="aww-caption">Bageta Bánh Mì Gà</div>
+                </div>
+                <div class="aww-item aww-item-small" data-parallax="0.05">
+                    <img src="Jidla/Smažené kuře v Bao.jpg" alt="Smažené kuře v Bao">
+                    <div class="aww-caption">Smažené kuře v Bao</div>
+                </div>
+                <div class="aww-item aww-item-medium" data-parallax="0.02">
+                    <img src="Jidla/Závitky Cha La Lot.jpg" alt="Závitky Cha La Lot">
+                    <div class="aww-caption">Závitky Cha La Lot</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════ ABOUT ══════════════════════════════════════════ -->
+    <section id="about">
+        <div class="about-container">
+            <div class="about-visual animate-on-scroll">
+                <div class="about-img-stack">
+                    <div class="about-img ai1">
+                        <img src="o nas/ddddwhatsapp-image-2026-02-12-at-131118-9.jpg"
+                            alt="Rodina Béo Ăn s průvodcem Gault &amp; Millau" />
+                    </div>
+                    <div class="about-img ai2">
+                        <img src="o nas/SnapInsta.to_504037377_17858217024431463_1133373557308993527_n.jpg"
+                            alt="Naše domácnost ve Vietnamu" />
+                    </div>
+                </div>
+            </div>
+            <div class="about-text animate-on-scroll">
+                <div class="section-label">Náš příběh</div>
+                <h2 class="section-title" style="font-family: 'DynaPuff', cursive; font-weight: 700;">Rodinná<br /><span
+                        class="accent-yellow">chuť domova</span></h2>
+                <p class="about-desc">Naše rodina přišla z Vietnamu s jedinou touhou — vařit přesně tak, jak to dělala
+                    babička. Recepty, které si pamatujeme od dětství. Vůně, které nás vracejí domů. Každý talíř u nás
+                    nese kus naší identity a našeho původu.</p>
+                <p class="about-desc">Béo Ăn není jen restaurace. Je to místo, kde sousedé vstupují jako hosté a
+                    odcházejí jako přátelé. Vaříme z čerstvých surovin, bez zkratek — protože věříme, že pravá
+                    vietnamská kuchyně si to zaslouží.</p>
+
+                <div class="about-mobile-visual">
+                    <img src="o nas/ddddwhatsapp-image-2026-02-12-at-131118-9.jpg" alt="Rodina Béo Ăn" />
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <span class="stat-num" data-count="15" data-suffix="+"
+                            style="font-family: 'DynaPuff', cursive; font-weight: 700;">0+</span>
+                        <span class="stat-label">Let tradice</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num" data-count="30" data-suffix="+"
+                            style="font-family: 'DynaPuff', cursive; font-weight: 700;">0+</span>
+                        <span class="stat-label">Pokrmů v menu</span>
+                    </div>
+                    <div class="stat-item stat-gm">
+                        <img src="Logo/Design-sans-titre-1-640x640.webp" alt="Gault &amp; Millau"
+                            class="stat-gm-logo" />
+                        <span class="stat-label">Ocenění</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tailwind, React, and GSAP library loading for Menu Component -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./menu_src/styles/menu-styles.css">
+    <script>
+        tailwind.config = {
+            corePlugins: {
+                preflight: false, // Prevents Tailwind from destroying existing site CSS
+            },
+            theme: {
+                extend: {
+                    colors: {
+                        'beo-yellow': '#FFD93D',
+                        'beo-blue': '#386ad2',
+                        'beo-black': '#111111',
+                    },
+                    fontFamily: {
+                        cartoon: ['Fredoka One', 'cursive'], // Matched to site font head
+                        nunito: ['Nunito', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- React App logic -->
+    <script type="text/babel">
+        const { useEffect, useRef, useState } = React;
+        gsap.registerPlugin(ScrollTrigger);
+
+        function MenuGrid({ menuData }) {
+            const containerRef = useRef(null);
+            const sectionsRef = useRef([]);
+            const lineRefs = useRef([]);
+
+            useEffect(() => {
+                const ctx = gsap.context(() => {
+                    sectionsRef.current.forEach((section) => {
+                        if (!section) return;
+                        gsap.fromTo(section,
+                            { opacity: 0, y: 150 },
+                            {
+                                opacity: 1, y: 0, duration: 1.2, ease: "power4.out",
+                                scrollTrigger: { trigger: section, start: "top 85%" }
+                            }
+                        );
+                    });
+
+                    lineRefs.current.forEach((line) => {
+                        if (!line) return;
+                        gsap.fromTo(line,
+                            { scaleX: 0 },
+                            {
+                                scaleX: 1, duration: 1.5, ease: "circ.inOut", transformOrigin: "left center",
+                                scrollTrigger: { trigger: line, start: "top 90%" }
+                            }
+                        );
+                    });
+                }, containerRef);
+                return () => ctx.revert();
+            }, []);
+
+            return (
+                <div ref={containerRef} className="w-full bg-[#FAFAFA] text-beo-black py-32 relative overflow-hidden" id="menu">
+                    <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
+
+                        <div className="flex justify-between items-end mb-32">
+                            <h2 className="font-nunito font-black text-8xl md:text-[12rem] leading-none tracking-tighter uppercase relative z-10">Menu</h2>
+                            <div className="hidden lg:flex space-x-4 mb-4 relative z-10">
+                                <span className="flex items-center text-sm font-bold uppercase tracking-widest"><span className="text-xl mr-2">★</span> Signature</span>
+                                <span className="flex items-center text-sm font-bold uppercase tracking-widest text-red-600"><span className="text-xl mr-2">🌶</span> Spicy</span>
+                                <span className="flex items-center text-sm font-bold uppercase tracking-widest text-green-600"><span className="text-xl mr-2">🍃</span> Veg</span>
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col gap-32">
+                            {menuData.map((category, idx) => (
+                                <div key={idx} ref={(el) => { sectionsRef.current[idx] = el; }} className="relative w-full grid grid-cols-1 lg:grid-cols-12 gap-12 z-10">
+                                    <div className="lg:col-span-4 sticky top-10 self-start z-10">
+                                        <h3
+                                            className={`text-cartoon mb-4 text-beo-blue drop-shadow-[3px_3px_0_rgba(17,24,39,1)] ${category.category.includes('<br>') ? 'text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight' : 'text-6xl md:text-8xl break-words'}`}
+                                            dangerouslySetInnerHTML={{ __html: category.category }}
+                                        />
+                                        {category.description && (
+                                            <p className="font-nunito text-2xl font-black italic tracking-tight text-gray-500 max-w-xs leading-snug">
+                                                "{category.description}"
+                                            </p>
+                                        )}
+                                    </div>
+
+                                    <div className="lg:col-span-8 flex flex-col pt-4 z-10">
+                                        {category.items.map((item, itemIdx) => (
+                                            <div key={itemIdx} className="mb-12 group cursor-crosshair">
+                                                <hr ref={(el) => { lineRefs.current[idx * 100 + itemIdx] = el; }} className="border-t-4 border-beo-black mb-8 w-full" />
+
+                                                <div className="flex justify-between items-start gap-8">
+                                                    <h4 className="font-nunito font-black text-4xl md:text-5xl uppercase tracking-tighter group-hover:text-beo-blue transition-colors duration-300">
+                                                        {item.name}
+                                                    </h4>
+
+                                                    <div className="flex space-x-3 shrink-0 pt-2">
+                                                        {item.tags?.includes('signature') && <span className="text-3xl" title="Signature">★</span>}
+                                                        {item.tags?.includes('spicy') && <span className="text-3xl text-red-600 drop-shadow-md" title="Spicy">🌶</span>}
+                                                        {item.tags?.includes('vegetarian') && <span className="text-3xl text-green-600 drop-shadow-md" title="Vegetarian">🍃</span>}
+                                                    </div>
+                                                </div>
+
+                                                {item.description && (
+                                                    <p className="font-nunito text-2xl font-bold text-gray-500 mt-4 max-w-2xl leading-relaxed">
+                                                        {item.description}
+                                                    </p>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        function App() {
+            const [data, setData] = useState([]);
+
+            useEffect(() => {
+                fetch('./menu_src/data/menu_data.json')
+                    .then(response => response.json())
+                    .then(json => setData(json))
+                    .catch(err => console.error("Error loading menu data:", err));
+            }, []);
+
+            return (
+                <div>
+                    {data.length > 0 ? <MenuGrid menuData={data} /> : <div className="py-32 text-center text-3xl font-bold">Načítám Menu...</div>}
+                </div>
+            );
+        }
+
+        const rootE = document.getElementById('root');
+        const root = ReactDOM.createRoot(rootE);
+        root.render(<App />);
+    </script>
+
+    <!-- ══════════════════════════════════════════ FOOTER ══════════════════════════════════════════ -->
+    <footer id="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="Logo/561685407_122149243454768990_2168087178171989979_n.jpg" alt="Béo Ăn"
+                    class="footer-logo" />
+                <p>Autentická vietnamská kuchyně<br />v srdci Hustopečí.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navigace</h4>
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#gallery">Galerie</a></li>
+                    <li><a href="#about">O nás</a></li>
+                    <li><a href="poukaz.html">Vouchery</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Kontakt</h4>
+                <p>Bratislavská 550/25<br />Hustopeče, 69301</p>
+                <a href="tel:+420123456789">+420 123 456 789</a>
+                <a href="mailto:info@beoan.cz">info@beoan.cz</a>
+            </div>
+            <div class="footer-hours">
+                <h4>Otevírací doby</h4>
+                <p>Po–Pá: 11:00–21:00</p>
+                <p>So–Ne: 12:00–22:00</p>
+                <div class="footer-gm">⭐ Gault &amp; Millau</div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Béo Ăn. Všechna práva vyhrazena.</span>
+            <span>Vytvořeno s ❤️ pro vietnamskou gastronomii</span>
+        </div>
+    </footer>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
