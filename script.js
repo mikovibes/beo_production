@@ -9,31 +9,8 @@
 let cart = [];
 let voucherSelected = null;
 
-// ════════════════════════════════ LOADER ════════════════════════════════
+// ════════════════════════════════ LOADER (Legacy disabled, handled by loader.js) ════════════════════════════════
 window.addEventListener('DOMContentLoaded', () => {
-  const loader = document.getElementById('loader');
-
-  // Ensure minimum loader display time for brand impression
-  const startTime = Date.now();
-  const MIN_DISPLAY = 2200;
-
-  window.addEventListener('load', () => {
-    const elapsed = Date.now() - startTime;
-    const remaining = Math.max(0, MIN_DISPLAY - elapsed);
-
-    setTimeout(() => {
-      loader.classList.add('hidden');
-      // Remove from DOM after transition
-      setTimeout(() => {
-        loader.style.display = 'none';
-        document.body.style.overflow = '';
-      }, 700);
-    }, remaining);
-  });
-
-  // Prevent scroll while loading
-  document.body.style.overflow = 'hidden';
-
   // Init everything after DOM is ready
   initNavbar();
   initScrollAnimations();

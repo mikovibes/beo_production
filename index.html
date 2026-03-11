@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="cs">
 
 <head>
@@ -13,27 +13,41 @@
         href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,800&family=Syne:wght@700;800&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="loader.css" />
 </head>
 
 <body>
 
     <!-- ══════════════════════════════════════════ LOADER ══════════════════════════════════════════ -->
     <div id="loader">
-        <!-- Steam dots rising above the logo -->
-        <div class="ld-steam">
-            <span class="ld-dot d1"></span>
-            <span class="ld-dot d2"></span>
-            <span class="ld-dot d3"></span>
+        <!-- Steam clouds -->
+        <div class="loader-steam-container">
+            <div class="steam-particle s1"><img src="assets/loader/steam_bria.png" alt=""></div>
+            <div class="steam-particle s2"><img src="assets/loader/steam_bria.png" alt=""></div>
+            <div class="steam-particle s3"><img src="assets/loader/steam_bria.png" alt=""></div>
+            <div class="steam-particle s4"><img src="assets/loader/steam_bria.png" alt=""></div>
+            <div class="steam-particle s5"><img src="assets/loader/steam_bria.png" alt=""></div>
         </div>
-        <!-- Logo card -->
-        <div class="ld-logo-wrap">
-            <img src="Logo/561685407_122149243454768990_2168087178171989979_n.jpg" alt="Béo Ăn" class="ld-logo" />
+
+        <!-- 3D Logo Group (Cloudy Text) -->
+        <div class="loader-logo-group">
+            <div class="logo-layer" id="loaderLogo">
+                <!-- Shadow First -->
+                <img src="assets/loader/hero_3d_text_bria.png" alt="" class="logo-shadow" id="loaderShadow">
+                <!-- Actual Logo -->
+                <img src="assets/loader/hero_3d_text_bria.png" alt="Béo Ăn">
+            </div>
         </div>
-        <!-- Tagline -->
-        <p class="ld-tagline">Autentická vietnamská kuchyně</p>
-        <!-- Progress bar -->
-        <div class="ld-bar">
-            <div class="ld-progress"></div>
+
+        <!-- Pho Bowl Wrap -->
+        <div class="loader-pho-wrap" id="loaderPho">
+            <img src="assets/loader/pho_soup_bria.png" alt="Delicious Pho">
+        </div>
+
+
+        <!-- Progress Bar -->
+        <div class="loader-progress-wrap">
+            <div class="loader-progress-bar" id="loaderBar"></div>
         </div>
     </div>
 
@@ -87,13 +101,9 @@
                 <span class="badge-dot"></span>
                 Gault &amp; Millau oceněná restaurace
             </div>
-            <div class="hero-logo-wrap animate-on-scroll">
-                <img src="Logo/561685407_122149243454768990_2168087178171989979_n.jpg" alt="Béo Ăn" class="hero-logo" />
-            </div>
             <p class="hero-tagline animate-on-scroll" style="font-family: 'DynaPuff', cursive; font-weight: 700;">
-                Vietnamská rodinná <span class="tagline-accent">kuchyně</span>
-                plná duše a chuti</p>
-            <p class="hero-sub animate-on-scroll">Autentické pokrmy z Vietnamu s láskou připravené v srdci Hustopečí</p>
+                Autentické pokrmy z Vietnamu s láskou připravené v srdci Hustopečí
+            </p>
             <div class="hero-ctas animate-on-scroll">
                 <a href="#order" class="btn-primary">
                     <span>Objednat online</span>
@@ -451,6 +461,7 @@
     <div id="toast" class="toast"></div>
 
     <script src="script.js"></script>
+    <script src="loader.js"></script>
 </body>
 
 </html>

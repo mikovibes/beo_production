@@ -431,82 +431,7 @@
             transform: scale(1);
         }
 
-        /* ── VOUCHER PREVIEW CARD ── */
-        .pv-preview-wrap {
-            margin: 48px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
-        .pv-card {
-            width: 540px;
-            background: var(--yellow);
-            border: 3px solid var(--black);
-            border-radius: var(--radius-lg);
-            box-shadow: 8px 8px 0 var(--black);
-            padding: 40px 44px;
-            display: flex;
-            align-items: center;
-            gap: 32px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pv-card::after {
-            content: '';
-            position: absolute;
-            right: -30px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--white);
-            border: 3px solid var(--black);
-        }
-
-        .pv-card-logo img {
-            width: 64px;
-            height: 64px;
-            border-radius: 12px;
-            border: 3px solid var(--black);
-            object-fit: cover;
-            flex-shrink: 0;
-        }
-
-        .pv-card-body {
-            flex: 1;
-        }
-
-        .pv-card-title {
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            opacity: 0.6;
-            margin-bottom: 4px;
-        }
-
-        .pv-card-name {
-            font-family: var(--font-head);
-            font-size: 2rem;
-            line-height: 1.1;
-        }
-
-        .pv-card-sub {
-            font-size: 0.8rem;
-            font-weight: 600;
-            opacity: 0.7;
-            margin-top: 4px;
-        }
-
-        .pv-card-amount {
-            font-family: var(--font-head);
-            font-size: 2.8rem;
-            text-align: right;
-            flex-shrink: 0;
-        }
 
         /* ── FORM ── */
         .pv-form-section {
@@ -1001,17 +926,7 @@
                 </div>
             </div>
 
-            <!-- Voucher Preview Card -->
-            <div class="pv-preview-wrap reveal" id="voucherPreview">
-                <div class="pv-card">
-                    <div class="pv-card-body">
-                        <div class="pv-card-title" style="white-space:nowrap;">Dárkový poukaz</div>
-                        <div class="pv-card-name" style="font-family: 'DynaPuff', cursive; font-weight: 700;">Béo Ăn
-                        </div>
-                    </div>
-                    <div class="pv-card-amount" id="cardAmount">1 000 Kč</div>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -1171,7 +1086,7 @@
             el.classList.add('selected');
             selectedAmount = amount;
             selectedName = name;
-            document.getElementById('cardAmount').textContent = amount.toLocaleString('cs-CZ') + ' Kč';
+
             document.getElementById('formAmountDisplay').textContent =
                 amount.toLocaleString('cs-CZ') + ' Kč — ' + name + ' Poukaz';
         }
