@@ -2873,9 +2873,9 @@ button {
     .about-stats {
         flex-direction: row;
         flex-wrap: nowrap;
-        gap: 12px;
-        justify-content: space-between;
-        align-items: center;
+        gap: 16px;
+        justify-content: center;
+        align-items: flex-end;
         width: 100%;
     }
 
@@ -2883,19 +2883,22 @@ button {
         flex: 1;
         min-width: 0;
         text-align: center;
+        align-items: center;
     }
 
     .stat-num {
-        font-size: var(--text-lg);
+        font-size: var(--text-xl);
     }
 
     .stat-label {
-        font-size: 0.6rem;
+        font-size: 0.72rem;
+        text-align: center;
+        white-space: nowrap;
     }
 
     .stat-gm-logo {
-        width: 40px;
-        height: 40px;
+        width: 56px;
+        height: 56px;
     }
 
     .voucher-grid {
