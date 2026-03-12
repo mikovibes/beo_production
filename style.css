@@ -714,6 +714,44 @@ button {
     z-index: 2;
 }
 
+/* ══════════════ LARGE SCREEN OPTIMIZATION ══════════════ */
+@media (min-width: 1600px) {
+    .hero-logo-wrap {
+        width: 420px;
+    }
+    .hero-tagline {
+        font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+        max-width: 1000px;
+    }
+    .hero-sub {
+        max-width: 600px;
+        font-size: var(--text-lg);
+    }
+    .hero-mosaic {
+        max-width: 580px;
+    }
+}
+
+@media (min-width: 2500px) {
+    .hero-logo-wrap {
+        width: 550px;
+    }
+    .hero-tagline {
+        font-size: clamp(3rem, 5vw, 6rem);
+        max-width: 1400px;
+    }
+    .hero-sub {
+        max-width: 800px;
+        font-size: var(--text-xl);
+    }
+    .hero-mosaic {
+        max-width: 800px;
+    }
+    #hero {
+        padding-top: 120px;
+    }
+}
+
 /* ══════════════════════════════════════════ AWARDS RIBBON ══════════════════════════════════════════ */
 .awards-ribbon {
     background: var(--black);
