@@ -59,7 +59,7 @@
     z-index: 16;
     transform-style: preserve-3d;
     pointer-events: none;
-    margin-top: -15vh; /* Overlap the logo clouds even more */
+    margin-top: 0; 
 }
 
 .loader-pho-wrap img {
@@ -79,7 +79,7 @@
     align-items: center;
     justify-content: center;
     perspective: 1200px;
-    margin-top: -55vh; /* Shift both logo and bowl up even more aggressively */
+    margin-top: 0; 
 }
 
 .logo-layer {
